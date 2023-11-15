@@ -1,5 +1,7 @@
+using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 using UnityEngine.XR.ARFoundation;
 
 public class CarModelSpawner : MonoBehaviour
@@ -12,7 +14,14 @@ public class CarModelSpawner : MonoBehaviour
     
     [SerializeField]
     ARTrackedImageManager trackedImageManager;
-   
+
+    [SerializeField] private Vector3 scaleFactor = new Vector3(0.06f, 0.06f, 0.06f);
+    
+    private GameObject spawnedObject;
+    
+    
+
+    private bool lockModel = false;
 
     void OnEnable() => trackedImageManager.trackedImagesChanged += OnChanged;
 
@@ -28,7 +37,11 @@ public class CarModelSpawner : MonoBehaviour
 
         foreach (var updatedImage in eventArgs.updated)
         {
-            
+            if (lockModel)
+            {
+                return;
+            }
+            UpdateSpawnedObject(updatedImage.transform);
         }
 
         foreach (var removedImage in eventArgs.removed)
@@ -39,7 +52,7 @@ public class CarModelSpawner : MonoBehaviour
     
     void SpawnObject(Vector3 position)
     {
-        GameObject spawnedObject = Instantiate(objectPrefab, position, Quaternion.identity);
+        spawnedObject = Instantiate(objectPrefab, position, Quaternion.identity);
         spawnedObject.SetActive(true);
     }
 
@@ -49,5 +62,27 @@ public class CarModelSpawner : MonoBehaviour
         {
             spawnText.text = newText;
         }
+    }
+
+    void UpdateSpawnedObject(Transform imageTransform)
+    {
+        if (spawnedObject != null)
+        {
+            var newRotation = spawnedObject.transform.rotation;
+            newRotation.y = imageTransform.rotation.y;
+            spawnedObject.transform.position = imageTransform.position;
+            spawnedObject.transform.rotation = newRotation;
+            spawnedObject.transform.localScale = scaleFactor;
+        }
+    }
+
+    public void LockModel()
+    {
+        if (spawnedObject.GetComponent<ARAnchor>() == null)
+        {
+            spawnedObject.AddComponent<ARAnchor>();
+        }
+        lockModel = true;
+        UpdateTrackingText("Locked");
     }
 }
