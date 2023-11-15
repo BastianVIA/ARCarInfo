@@ -12,6 +12,7 @@ public class CarModelSpawner : MonoBehaviour
     
     [SerializeField]
     ARTrackedImageManager trackedImageManager;
+   
 
     void OnEnable() => trackedImageManager.trackedImagesChanged += OnChanged;
 
