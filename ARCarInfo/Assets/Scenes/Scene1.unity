@@ -426,6 +426,7 @@ GameObject:
   m_Component:
   - component: {fileID: 888155769}
   - component: {fileID: 888155768}
+  - component: {fileID: 888155770}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -466,6 +467,20 @@ Transform:
   - {fileID: 1613355665}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &888155770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888155766}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1760703bbd54c04488a8d10600262ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlanePrefab: {fileID: 8466089622946630025, guid: a18aa8050682ada43a5886e69e0c8117, type: 3}
+  m_DetectionMode: -1
 --- !u!1 &1366302124
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,6 +495,7 @@ GameObject:
   - component: {fileID: 1366302129}
   - component: {fileID: 1366302128}
   - component: {fileID: 1366302131}
+  - component: {fileID: 1366302132}
   m_Layer: 0
   m_Name: AR Session
   m_TagString: Untagged
@@ -529,9 +545,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84edfd12ae6580e42abf274c905ef4da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPrefab: {fileID: 6791144789010438477, guid: d1bc143ea292fd84ab4e46a70819eddb, type: 3}
+  objectPrefab: {fileID: 1823206397201673788, guid: 00022e5a978595146bad46f75c3cdbed, type: 3}
   spawnText: {fileID: 1756140067}
   trackedImageManager: {fileID: 1366302129}
+  scaleFactor: {x: 0.06, y: 0.08, z: 0.08}
 --- !u!114 &1366302129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -576,6 +593,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa850fbd5b8aded44846f96e35f1a9f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1366302132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366302124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728ad7fae8e460a4ba41265c7308d757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AnchorPrefab: {fileID: 0}
 --- !u!1 &1613355664
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,6 +649,7 @@ GameObject:
   - component: {fileID: 1756140066}
   - component: {fileID: 1756140068}
   - component: {fileID: 1756140067}
+  - component: {fileID: 1756140069}
   m_Layer: 5
   m_Name: SpawnText
   m_TagString: Untagged
@@ -742,6 +773,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756140065}
   m_CullTransparentMesh: 1
+--- !u!114 &1756140069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756140065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1756140067}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1366302128}
+        m_TargetAssemblyTypeName: CarModelSpawner, Assembly-CSharp
+        m_MethodName: LockModel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1903332592
 GameObject:
   m_ObjectHideFlags: 0
