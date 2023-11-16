@@ -7,16 +7,16 @@ public class LightFront : MonoBehaviour, IInteractable
     [SerializeField]
     private GameObject ui;
 
-    private SwipeUIController _uiController;
+    private PanelViewController _uiController;
 
     private void Awake()
     {
-        _uiController = GetComponentInChildren<SwipeUIController>();
+        _uiController = GetComponentInChildren<PanelViewController>();
     }
 
     public void Interact()
     {
-        _uiController.EnableUI();
+        
 
     }
 }

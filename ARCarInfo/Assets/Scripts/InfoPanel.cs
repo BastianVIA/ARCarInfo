@@ -19,7 +19,7 @@ public class InfoPanel : MonoBehaviour
 
     private void AddDemandBulletPoints()
     {
-        if (transform.childCount == demands.points.Count) return;
+        if (transform.childCount >= demands.points.Count) return;
 
         foreach (var point in demands.points)
         {

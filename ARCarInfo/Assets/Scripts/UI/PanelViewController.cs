@@ -1,17 +1,11 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SwipeUIController : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
+public class PanelViewController : MonoBehaviour
 {
     [SerializeField]
-    private float dragThreshold;
-
-    [SerializeField]
-    private DemandsController[] demands;
+    private DemandsController[] pages;
 
     [SerializeField]
     private GameObject body, demandsContainer, footer, iconPrefab;
@@ -19,26 +13,39 @@ public class SwipeUIController : MonoBehaviour, IDragHandler, IBeginDragHandler,
     private RectTransform demandsRect;
 
     private int pageIndex = 0;
-    private Vector2 _dragBegin, _dragEnd;
+    private int numberOfPages = 0;
     
     private void Awake()
     {
-        demands = body.GetComponentsInChildren<DemandsController>();
+        pages = body.GetComponentsInChildren<DemandsController>();
         demandsRect = demandsContainer.GetComponent<RectTransform>();
+        numberOfPages = pages.Length;
+        SetupFooter();
     }
 
- 
-
-    public void EnableUI() {
-        pageIndex = 0;
-        Init();
-    }
-
-    private void Init() {
-        foreach (var page in demands) { 
-            page.gameObject.SetActive(false);
+    private void SetupFooter() { 
+        for (int i = 0; i < numberOfPages; i++)
+        {
+            Instantiate(iconPrefab, footer.transform);
         }
+    }
+
+    private void OnEnable()
+    {
+        ActivatePages();
+        SetFirstPage();
+    }
+
+    private void SetFirstPage() { 
+        pageIndex = 0;
         SetPageIconWhite(pageIndex);
+    }
+
+    private void ActivatePages() {
+        foreach (var page in pages)
+        {
+            page.gameObject.SetActive(true);
+        }
     }
 
     private void SetPageIconWhite(int index) {
@@ -58,7 +65,7 @@ public class SwipeUIController : MonoBehaviour, IDragHandler, IBeginDragHandler,
         var toScroll = demandsRect.sizeDelta / demandsContainer.transform.childCount;
         var targetPosition = demandsRect.anchoredPosition + new Vector2(-toScroll.x, 0);
 
-        StartCoroutine(LerpRectPosition(targetPosition, 0.2f));
+        StartCoroutine(ShiftDemandsRect(targetPosition, 0.2f));
     }
 
     public void PrevPage() {
@@ -70,10 +77,10 @@ public class SwipeUIController : MonoBehaviour, IDragHandler, IBeginDragHandler,
         var toScroll = demandsRect.sizeDelta / demandsContainer.transform.childCount;
         var targetPosition = demandsRect.anchoredPosition + new Vector2(toScroll.x, 0);
 
-        StartCoroutine(LerpRectPosition(targetPosition, 0.2f));
+        StartCoroutine(ShiftDemandsRect(targetPosition, 0.2f));
     }
 
-    private IEnumerator LerpRectPosition( Vector2 targetPosition, float duration)
+    private IEnumerator ShiftDemandsRect( Vector2 targetPosition, float duration)
     {
         float elapsedTime = 0;
         Vector2 startingPosition = demandsRect.anchoredPosition;
@@ -88,38 +95,7 @@ public class SwipeUIController : MonoBehaviour, IDragHandler, IBeginDragHandler,
         demandsRect.anchoredPosition = targetPosition;
     }
 
- 
-
     private void UpdatePageIndex(int value) { 
-        pageIndex = (pageIndex + value) % demands.Length;
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        var direction = _dragEnd - _dragBegin;
-        
-        if (direction.x > 0)
-        {
-            PrevPage();
-            
-        }
-        else {
-            NextPage();
-            
-        }
-       
-    }
-
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        _dragBegin = eventData.pressPosition;
-        Debug.Log("beginDrag: " + _dragEnd);
-    }
-
-    public void OnDrag(PointerEventData eventData)
-    {
-        _dragEnd = eventData.position;
-        
-       
+        pageIndex = (pageIndex + value) % pages.Length;
     }
 }

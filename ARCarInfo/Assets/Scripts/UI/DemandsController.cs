@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -25,7 +24,7 @@ public class DemandsController : MonoBehaviour
     }
 
     private void CreateBulletPoints(List<string> points) {
-        if (body.transform.childCount == points.Count) return;
+        if (body.transform.childCount >= points.Count) return;
 
         foreach (var point in points)
         {

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5e11ecae4b7a246b2b8dc0bf228a71, type: 3}
   m_Name: WheelDemand
   m_EditorClassIdentifier: 
+  Title: Hjul
   points:
   - "\u2022 D\xE6k skal have mindst 1,6mm slidebane"
   - "\u2022 D\xE6k skal v\xE6re af samme type p\xE5 alle 4 hjul"
