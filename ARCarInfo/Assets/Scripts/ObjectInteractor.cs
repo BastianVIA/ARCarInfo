@@ -2,11 +2,9 @@ using UnityEngine;
 
 public class ObjectInteractor : MonoBehaviour
 {
-    
     [SerializeField]
     private LayerMask layerMask;
-
-
+    
     [SerializeField]
     private GameObject currentSelection;
 
@@ -16,8 +14,6 @@ public class ObjectInteractor : MonoBehaviour
     }
 
     private void HandleClick(Vector3 position) {
-        
-        
         HitObjectAtPosition(position);    
     }
 

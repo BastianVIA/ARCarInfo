@@ -1,8 +1,4 @@
-using System;
-using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UIElements;
 using UnityEngine.XR.ARFoundation;
 
 public class CarModelSpawner : MonoBehaviour
@@ -31,10 +27,7 @@ public class CarModelSpawner : MonoBehaviour
             carController.UpdateSpawnedObject(updatedImage.transform);
         }
 
-        foreach (var removedImage in eventArgs.removed)
-        {
-            
-        }
+        foreach (var removedImage in eventArgs.removed) {}
     }
     
     void SpawnObject(Vector3 position)
@@ -42,6 +35,5 @@ public class CarModelSpawner : MonoBehaviour
         carObject = Instantiate(carPrefab, position, Quaternion.identity);
         carObject.SetActive(true);
         carController = carObject.GetComponent<CarController>();
-        
     }
 }

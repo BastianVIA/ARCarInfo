@@ -26,11 +26,7 @@ public class ImageTracker : MonoBehaviour
         Debug.Log("image: " + _imageManager.referenceLibrary.count);
         textMeshProUGUI.text = "Awaken";
     }
-
-
-   
-
-
+    
     private void OnEnable()
     {
         _imageManager.trackedImagesChanged += OnChanged;
@@ -47,7 +43,7 @@ public class ImageTracker : MonoBehaviour
         foreach (var newImage in evt.added)
         {
             //spawned = Instantiate(prefab, newImage.transform);
-            textMeshProUGUI.text = "Shit mand billed læst";
+            textMeshProUGUI.text = "Shit mand billed lï¿½st";
         }
 
         foreach (var updatedImage in evt.updated)

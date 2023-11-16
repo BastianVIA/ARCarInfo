@@ -13,14 +13,12 @@ public class ObjectPlacer : MonoBehaviour
     private Vector2 touchPosition;
     private GameObject spawnedObject;
     private List<ARRaycastHit> hits = new List<ARRaycastHit> ();
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         _arRaycastManager = GetComponent<ARRaycastManager> ();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         PlaceObject();
@@ -44,7 +42,5 @@ public class ObjectPlacer : MonoBehaviour
                     spawnedObject.transform.position = hitPose.position;
             }
         }
-
     }
-
 }
