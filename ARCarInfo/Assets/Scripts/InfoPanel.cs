@@ -15,8 +15,7 @@ public class InfoPanel : MonoBehaviour
     {
         AddDemandBulletPoints();
     }
-
-
+    
     private void AddDemandBulletPoints()
     {
         if (transform.childCount >= demands.points.Count) return;

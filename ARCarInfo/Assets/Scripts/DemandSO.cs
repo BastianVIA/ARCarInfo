@@ -7,5 +7,4 @@ public class DemandSO : ScriptableObject
 {
     public string Title;
     public List<string> points = new List<string>();
-
 }

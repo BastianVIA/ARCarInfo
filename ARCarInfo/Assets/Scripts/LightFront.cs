@@ -16,7 +16,6 @@ public class LightFront : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        
 
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6356969497499946882}
   - component: {fileID: 1764494157348739140}
   m_Layer: 6
-  m_Name: LightModel
+  m_Name: FrontLightModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 3335105181038896080}
   m_Layer: 0
   m_Name: RF_Light
-  m_TagString: Untagged
+  m_TagString: ModelPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
