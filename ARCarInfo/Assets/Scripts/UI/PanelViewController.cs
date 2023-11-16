@@ -14,11 +14,13 @@ public class PanelViewController : MonoBehaviour
 
     private int pageIndex = 0;
     private int numberOfPages = 0;
+    private float startPosition;
     
     private void Awake()
     {
         pages = body.GetComponentsInChildren<DemandsController>();
         demandsRect = demandsContainer.GetComponent<RectTransform>();
+        startPosition = demandsRect.anchoredPosition.x;
         numberOfPages = pages.Length;
         SetupFooter();
     }
@@ -34,6 +36,12 @@ public class PanelViewController : MonoBehaviour
     {
         ActivatePages();
         SetFirstPage();
+    }
+
+    private void OnDisable()
+    {
+        SetPageIconBlack(pageIndex);
+        demandsRect.anchoredPosition = new Vector2(startPosition, 0);
     }
 
     private void SetFirstPage() { 
