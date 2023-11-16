@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5e11ecae4b7a246b2b8dc0bf228a71, type: 3}
+  m_Name: LicensePlate
+  m_EditorClassIdentifier: 
+  Title: Nummerpladelys
+  points:
+  - "\u2022 Skal v\xE6re hvidt"
+  - "\u2022 Skal oplyse nummerpladen s\xE5 den kan afl\xE6ses i 20 m. afstand"

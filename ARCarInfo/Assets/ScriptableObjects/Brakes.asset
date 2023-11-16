@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5e11ecae4b7a246b2b8dc0bf228a71, type: 3}
+  m_Name: Brakes
+  m_EditorClassIdentifier: 
+  Title: Bremser
+  points:
+  - "\u2022 Bremsev\xE6ske mellem minimum og maximum m\xE6rke"
+  - "\u2022 Pedalen m\xE5 ikke kunne tr\xE6des helt ned i bund, ogs\xE5 n\xE5r der
+    tr\xE6des hurtigt og h\xE5rdt"
+  - "\u2022 Pedalen m\xE5 ikke synke, mens den holdes nedtr\xE5dt ved konstant tryk"
+  - "\u2022 Hvis pedalen synker, er forst\xE6rkeren i orden"

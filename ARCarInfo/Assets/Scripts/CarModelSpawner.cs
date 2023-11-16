@@ -19,8 +19,6 @@ public class CarModelSpawner : MonoBehaviour
     
     private GameObject spawnedObject;
     
-    
-
     private bool lockModel = false;
 
     void OnEnable() => trackedImageManager.trackedImagesChanged += OnChanged;
