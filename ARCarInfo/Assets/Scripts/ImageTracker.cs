@@ -30,7 +30,7 @@ public class ImageTracker : MonoBehaviour
     private void OnEnable()
     {
         _imageManager.trackedImagesChanged += OnChanged;
-    }
+    }   
 
     private void OnDisable()
     {
