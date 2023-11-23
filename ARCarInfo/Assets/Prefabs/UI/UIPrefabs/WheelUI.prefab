@@ -93,10 +93,10 @@ RectTransform:
   - {fileID: 1026158823509238799}
   m_Father: {fileID: 2849877063963457292}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 174.99422, y: -35.105732}
-  m_SizeDelta: {x: 349.98843, y: 70.211464}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1561544937148308327
 GameObject:
@@ -365,10 +365,10 @@ RectTransform:
   - {fileID: 5081739709227436465}
   m_Father: {fileID: 6696989248718003932}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 174.99422, y: -35.105732}
-  m_SizeDelta: {x: 349.98843, y: 70.211464}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2075568083097051425
 GameObject:
@@ -572,10 +572,10 @@ RectTransform:
   - {fileID: 6178546869937444866}
   m_Father: {fileID: 2849877063963457292}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 174.99422, y: -292.43076}
-  m_SizeDelta: {x: 349.98843, y: 444.43857}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2442342690173127000
 MonoBehaviour:
@@ -1281,10 +1281,10 @@ RectTransform:
   - {fileID: 175925578814146926}
   m_Father: {fileID: 6696989248718003932}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 174.99422, y: -292.43076}
-  m_SizeDelta: {x: 349.98843, y: 444.43857}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5735512339426168375
 MonoBehaviour:
@@ -1414,6 +1414,7 @@ GameObject:
   - component: {fileID: 3215009681645139579}
   - component: {fileID: 4045720508719444597}
   - component: {fileID: 5362827067774559317}
+  - component: {fileID: -5726941553318314755}
   m_Layer: 5
   m_Name: WheelUI
   m_TagString: Untagged
@@ -1438,7 +1439,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -35.729, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1.47}
+  m_AnchoredPosition: {x: 0, y: 1.4699707}
   m_SizeDelta: {x: 350, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4566653915170925540
@@ -1517,3 +1518,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiObject: {fileID: 7849964791675749650}
+--- !u!114 &-5726941553318314755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7942272436309309731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77d9966b57486e74da3a8dbf338555c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
